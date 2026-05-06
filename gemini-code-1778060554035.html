@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnorete | Evento Nazionale 2026</title>
+    <style>
+        :root {
+            --tecnorete-blue: #003366;
+            --tecnorete-orange: #f39200;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--tecnorete-blue);
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        header {
+            padding: 30px 20px;
+            background: white;
+            border-bottom: 8px solid var(--tecnorete-orange);
+        }
+
+        header img {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+        }
+
+        .hero {
+            background-color: var(--tecnorete-blue);
+            color: white;
+            padding: 70px 20px;
+        }
+
+        #countdown {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--tecnorete-orange);
+            margin: 25px 0;
+            display: block;
+        }
+
+        .motivation-text {
+            font-size: 1.6rem;
+            font-style: italic;
+            padding: 50px 20px;
+            background-color: #f8f9fa;
+            max-width: 900px;
+            margin: auto;
+            line-height: 1.4;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .cta-section {
+            padding: 80px 20px;
+            background: var(--tecnorete-blue);
+            color: white;
+        }
+
+        .btn {
+            background-color: var(--tecnorete-orange);
+            color: white;
+            padding: 25px 50px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.4rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 35px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: white;
+            color: var(--tecnorete-blue);
+            transform: translateY(-5px);
+        }
+
+        footer {
+            padding: 30px 20px;
+            background-color: #ffffff;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Tecnorete logo ufficiale.png" alt="Logo Tecnorete Ufficiale">
+    </header>
+
+    <div class="hero">
+        <p style="text-transform: uppercase; letter-spacing: 3px; font-weight: bold;">Verso il Convegno Nazionale</p>
+        <h1 style="font-size: 2.5rem;">VITRIFRIGO ARENA | 23 MAGGIO</h1>
+        <div id="countdown">Caricamento...</div>
+    </div>
+
+    <div class="motivation-text">
+        "Essere parte di Tecnorete significa non porsi limiti. Il 23 Maggio celebriamo la nostra forza: l'unico modo per esserci è scendere in campo con noi."
+    </div>
+
+    <div class="gallery">
+        <img src="WhatsApp Image 2026-05-06 at 11.22.39 (1).jpeg" alt="Premiazione Tecnorete">
+        <img src="unnamed.jpg" alt="Team Tecnorete">
+        <img src="unnamed (1).jpg" alt="Arena Vitrifrigo">
+        <img src="unnamed (2).jpg" alt="Convegno Nazionale">
+        <img src="unnamed (3).jpg" alt="Giovani Professionisti">
+        <img src="unnamed (4).jpg" alt="Leadership">
+        <img src="unnamed (5).jpg" alt="Successo di Squadra">
+        <img src="unnamed (6).jpg" alt="Cena Gala">
+        <img src="unnamed (7).jpg" alt="Traguardi">
+    </div>
+
+    <div class="cta-section">
+        <h2 style="font-size: 2.2rem;">IL TUO POSTO IN PRIMA FILA TI ASPETTA.</h2>
+        <p style="font-size: 1.2rem;">Non restare a guardare il successo degli altri dal di fuori. Entra nell'élite dell'immobiliare.</p>
+        
+        <!-- Pulsante WhatsApp configurato con numero e messaggio preimpostato -->
+        <a href="https://wa.me/393333998469?text=Ciao,%20ho%20visto%20il%20tuo%20sito,%20vorrei%20maggiori%20info!!!" class="btn">CANDIDATI SU WHATSAPP</a>
+    </div>
+
+    <footer>
+        Ogni agenzia ha un proprio titolare ed è autonoma
+    </footer>
+
+    <script>
+        const eventDate = new Date("May 23, 2026 09:30:00").getTime();
+
+        setInterval(function() {
+            const now = new Date().getTime();
+            const diff = eventDate - now;
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = 
+                d + "g : " + h + "h : " + m + "m : " + s + "s";
+
+            if (diff < 0) {
+                document.getElementById("countdown").innerHTML = "L'EVENTO È IN CORSO";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
